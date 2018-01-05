@@ -73,6 +73,8 @@ The following options can be set in your `/site/config/config.php`:
 
     c::set('autogit.enable',         true);
 
+    c::set('autogit.autopush',       false);
+
     c::set('autogit.language',       'en');
     c::set('autogit.translation', [
         'site.update'  => 'Changed site options',
@@ -154,6 +156,9 @@ Auto Git will add a widget to the Panel by default, set this option to false to 
 
 ### autogit.enable
 You can use this option to disable autogit in various environments.  It defaults to true.
+
+### autogit.autopush
+Automatically push to remote repository upon panel save. Defaults to `false`.
 
 ### autogit.language
 Default commit language. You can choose from any of the languages that ships with Auto Git: `'en'`, `'pt_BR'` or `'pt_PT'`.

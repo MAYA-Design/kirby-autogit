@@ -37,9 +37,13 @@ class Autogit extends Git
     public function save(...$params)
     {
         $message = $this->getMessage($params[0], array_slice($params, 1));
+        $autoPush = c::get('autogit.autopush', false);
 
         $this->add();
         $this->commit($message);
+        if ($autoPush) {
+            $this->push();
+        }
     }
 
     public function add($path = false)
